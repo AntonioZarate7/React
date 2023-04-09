@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Button } from 'semantic-ui-react';
+import {getAuth, onAuthStateChanged } from "firebase/auth"
+import {LoggedNavigation} from './routes/LoggedNavigation';
 
 function App() {
+  const [user, setUser] = useState(undefined);
+  const auth = getAuth();
+
+  //Funcion que devuelve un callback
+  onAuthStateChanged(auth, (user) => {
+    console.log(user);
+  });
+
+  if(user === undefined){
+    return null;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        <Button primary>Primary</Button>
+        <Button secondary>Secondary</Button>
+      </h1>
     </div>
   );
 }

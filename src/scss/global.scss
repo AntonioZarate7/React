@@ -1,0 +1,9 @@
+//Aplica estilos de manera global 
+@import "./index.scss";
+
+//A todo, a los links y a los parrafos le aplicamos el color base
+*,
+a,
+p { 
+    color: $danger;
+}
