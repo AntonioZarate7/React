@@ -1,0 +1,23 @@
+@import "~/src/scss/index"; //Para poder importar los colores globales que tenemos
+
+.auth{
+    height: 100vh; //Altura completa de la pantalla o ventana grafica
+    width: 100vw; //Ancho completo de la pantall o ventana grafica
+    background-image: url("../../assets/jpg/background-auth.jpg");
+    display: flex;
+    align-items: center; //Alinea el logo al centro de la pantalla
+    justify-content: center;
+
+    //Una forma de abreviar la clase .auth__content
+    &__content{
+        width: 500px;
+        border-radius: 10px;
+        background-color: $background-primary;
+        padding: 50px 70px;
+    }
+
+    &-logo{
+        width: 200px;
+        margin: 0 auto;
+    }
+}

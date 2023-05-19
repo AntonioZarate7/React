@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import { AuthOptions, LoginForm, RegisterForm } from "../../components/Auth";
+import { logoNameWhite } from "../../assets";
+import "./Auth.scss";
 
 //NAvegacion para usuarios no logueados 
 export function Auth() {
@@ -18,14 +20,21 @@ export function Auth() {
     }else if(typeForm === "register"){
       return <RegisterForm openLogin={openLogin} goBack={goBack}/>;
     }else{
-
-    }
-    return <AuthOptions openLogin={openLogin} openRegister={openRegister}/>;
+      return <AuthOptions openLogin={openLogin} openRegister={openRegister}/>;
+    }    
   };
 
+  //Retorna la imagen del logo y debajo el componente especificado en el estado
   return (
-    <div>
-      {renderForm()}
+    <div className='auth'>
+      <div className='auth__content'>
+        <Image 
+          src={logoNameWhite}
+          alt="Musicfy"
+          className='auth__content-logo'
+        />
+        {renderForm()}
+      </div>      
     </div>
   );
 }
