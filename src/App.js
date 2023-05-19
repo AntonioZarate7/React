@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {getAuth, onAuthStateChanged } from "firebase/auth"
 import {LoggedNavigation} from './routes/LoggedNavigation'; 
-import {Artists, Artist, Home, Auth, Albums, Profile } from "./pages";
+import {Auth } from "./pages";
 
 function App() {
   const [user, setUser] = useState(undefined);

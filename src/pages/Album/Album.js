@@ -1,10 +1,10 @@
 import React from 'react'
 
-export function Albums() {
+export function Album() {
   return (
     <div>
       <h1>
-        Albums Screen
+        Album Screen
       </h1>
     </div>
   )
