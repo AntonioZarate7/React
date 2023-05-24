@@ -1,0 +1,43 @@
+//Utilizando las clases pre-definidas por semantic al inspeccionar los componentes input del formulario
+//Estilos globales para los for,u;arios de semantic 
+.ui.form{
+    .field{
+        .input{
+            input{ //Da estilo a todos los inputs del formulario de registros
+                background-color: $background-secondary;
+                border-color: $background-secondary;
+                color: $font-light;
+
+                &:hover,
+                &:active,
+                &:focus{
+                    background-color: $background-secondary;
+                }
+
+                i {
+                    color: $font-light;
+                }
+            }            
+        }
+
+        .ui.button.primary{ //Estilo global a los button primary de semantic
+            background-color: $primary-color;
+            color: $font-light;
+            border-radius: 100px;
+        }
+    }
+
+    .field.error{ //Da estilo de forma global a los errores en los input 
+        .ui.input{
+            input{
+                background-color: $background-secondary;
+                border: 1px solid $danger;
+                color: $danger;
+            }
+
+            i {
+                color: $danger;
+            }
+        }
+    }
+}
