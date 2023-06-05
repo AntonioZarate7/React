@@ -18,6 +18,21 @@ export class Auth {
     }
 
     /**
+     * Realiza el login en firebase, autentificando por medio de 
+     * @param {*} email 
+     * @param {*} password 
+     * @author AntonioZarate
+     */
+    async login(email, password){
+        try{
+            const auth = getAuth();
+            await signInWithEmailAndPassword(auth, email, password);
+        }catch(error){
+            throw error
+        }
+    }
+
+    /**
      * Cierra la sesion de logueo en Firebase
      * @author AntonioZarate
      */
@@ -28,11 +43,5 @@ export class Auth {
         }catch(error){
             throw error;
         }
-    }
-
-    async login(email, password){
-        const auth = getAuth();
-        await signInWithEmailAndPassword(auth, email, password);
-
     }
 }
